@@ -1,0 +1,130 @@
+---
+swagger: "2.0"
+info:
+  description: |
+    This is a the currency converter APIs.
+  version: 1.0.0
+  title: Swagger Currency Converter
+  contact:
+    email: sherine.emad@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /Sherine/Test/1.0.0
+tags:
+- name: Currency Converter
+  description: Everything about your currency
+  externalDocs:
+    description: Find out more
+    url: http://swagger.io
+schemes:
+- https
+- http
+paths:
+  /VAT/{vatID}:
+    get:
+      tags:
+      - VAT by ID
+      summary: Finds VAT by vatId
+      description: provide the VAT value
+      operationId: findVATbyVatID
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: vatID
+        in: path
+        description: ID of vat to input
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/vatIDValue'
+        400:
+          description: Invalid status value
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+  /currency/convert/{from}/{to}/{quantity}:
+    get:
+      tags:
+      - Currency Converter
+      summary: Find quantity converted
+      description: total converted amount
+      operationId: getPetById
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: from
+        in: path
+        description: Currency type to convert from
+        required: true
+        type: string
+      - name: to
+        in: path
+        description: Currency type to convert to
+        required: true
+        type: string
+      - name: quantity
+        in: path
+        description: Amount required to be converted from /to
+        required: true
+        type: number
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CurrencyConverter'
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Currency not found
+      security:
+      - api_key: []
+securityDefinitions:
+  petstore_auth:
+    type: oauth2
+    authorizationUrl: http://petstore.swagger.io/oauth/dialog
+    flow: implicit
+    scopes:
+      write:pets: modify pets in your account
+      read:pets: read your pets
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+definitions:
+  vatIDValue:
+    type: object
+    properties:
+      countryCode:
+        type: string
+      vatNumber:
+        type: string
+      isValid:
+        type: boolean
+    xml:
+      name: Order
+  CurrencyConverter:
+    type: object
+    properties:
+      from:
+        type: string
+      to:
+        type: string
+      quantity:
+        type: number
+      totalCalculatedAmount:
+        type: number
+    xml:
+      name: vatIDValue
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

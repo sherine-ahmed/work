@@ -1,0 +1,8 @@
+com\conichi\service\controllers\VATValidation.class
+com\conichi\service\beans\CurrencyConversionBean.class
+com\conichi\service\beans\VATValidationBean.class
+com\conichi\service\controllers\Error.class
+com\conichi\service\utilities\Utility.class
+com\conichi\service\controllers\CurrencyConverter.class
+com\conichi\service\main\ConichiCurrencyConversionApplication.class
+com\conichi\service\utilities\VATUtility.class

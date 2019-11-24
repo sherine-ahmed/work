@@ -1,0 +1,35 @@
+{
+  "terms": "https://currencylayer.com/terms",
+  "privacy": "https://currencylayer.com/privacy",
+   "timestamp": 1430401802,
+	"GB288305674": {
+	    "valid": true,
+	    "vat_number": "288305674",
+	    "country_code": "GB"
+	  },  
+	"CZ25123891": {
+	    "valid": true,
+	    "vat_number": "25123891",
+	    "country_code": "CZ"
+	  },
+	 "ITO4886070152": {
+	    "valid": true,
+	    "vat_number": "4886070152",
+	    "country_code": "ITO"
+	  },
+	  "AU4406704": {
+	    "valid": true,
+	    "vat_number": "4406704",
+	    "country_code": "AU"
+	  },
+	  "NL80.49.73.787.B01": {
+	    "valid": true,
+	    "vat_number": "80.49.73.787.B01",
+	    "country_code": "NL"
+	  },
+	   "DE823790421": {
+	    "valid": true,
+	    "vat_number": "823790421",
+	    "country_code": "DE"
+	  }	  	 
+}
